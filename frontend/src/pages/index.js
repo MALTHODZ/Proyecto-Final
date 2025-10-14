@@ -7,6 +7,7 @@ export default function Home() {
       <div>
 
         <p>Inicio del proyecto frontend con next</p>
+          <span>Babungers</span>
 
       </div>
 
