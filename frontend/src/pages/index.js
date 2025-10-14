@@ -14,7 +14,15 @@ export default function Home() {
               <button>Registrarse</button>
               <button>Iniciar sesion</button>
           </header>
-
+          <nav>
+              <div>Categorias</div>
+          </nav>
+          <main>
+              <div>Lista de libros</div>
+          </main>
+          <footer>
+              <div>2025</div>
+          </footer>
       </div>
 
 
