@@ -7,7 +7,13 @@ export default function Home() {
       <div>
 
         <p>Inicio del proyecto frontend con next</p>
-          <span>Babungers</span>
+          <header>
+              <span>Icono</span>
+              <p>Babunger Books</p>
+              <input/>
+              <button>Registrarse</button>
+              <button>Iniciar sesion</button>
+          </header>
 
       </div>
 
