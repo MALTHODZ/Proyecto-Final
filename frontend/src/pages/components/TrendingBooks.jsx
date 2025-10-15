@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getTrendingBooks } from '../api/openLibrary';
+import BookCard from "@/pages/components/BookCard";
 
 const TrendingBooks = () => {
     const [books, setBooks] = useState([]);
@@ -20,30 +21,19 @@ const TrendingBooks = () => {
 
     return (
         <div>
-            <h1>Prueba de Trending Books API</h1>
+            <h1 >Prueba de Trending Books API</h1>
 
             <button onClick={fetchBooks}>
                 Actualizar por si no cargan y ver el error por consola
             </button>
 
             <div>
-                <h1>Libros Trending</h1>
+                <h2>Libros Trending</h2>
                 <p>Mostrando {books.length} libros</p>
 
-                <div>
+                <div className="trending-books-grid">
                     {books.map(book => (
-                        <div key={book.id}>
-
-                            <h2>
-                                {book.title}
-                            </h2>
-
-                            {book.firstPublishYear && (
-                                <p>
-                                    Año: {book.firstPublishYear}
-                                </p>
-                            )}
-                        </div>
+                        <BookCard key={book.id} book={book} />
                     ))}
                 </div>
             </div>
