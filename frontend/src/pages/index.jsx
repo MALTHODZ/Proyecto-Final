@@ -1,12 +1,10 @@
-
+import TrendingBooks from "@/pages/components/TrendingBooks";
 
 
 export default function Home() {
   return (
     <>
       <div>
-
-        <p>Inicio del proyecto frontend con next</p>
           <header>
               <span>Icono</span>
               <p>Babunger Books</p>
@@ -18,6 +16,9 @@ export default function Home() {
               <div>Categorias</div>
           </nav>
           <main>
+              <div>
+                  <TrendingBooks/>
+              </div>
               <div>Lista de libros</div>
           </main>
           <footer>
