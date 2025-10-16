@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {fetchSearchBooks} from "@/pages/api/apiFetch";
 import {formatSearchBook} from "@/pages/api/bookSearchFormat";
+import {formatBook} from "@/pages/api/bookFormat";
 
 
 export default function BookSearch() {
@@ -11,15 +12,16 @@ export default function BookSearch() {
     const handleSearch = async () => {
         if (!search.trim()) return;
 
-        try{
-            const data = await fetchSearchBooks(search);
+        const data = await fetchSearchBooks(search).catch((error) => {
+            console.log("Error buscando libros",error);
+        });
 
-            const formattedBooks = data.docs.map(formatSearchBook)
-
-            setBooks(formattedBooks);
-        } catch (error) {
-            setBooks([]);
-        }
+       if (data){
+       const formattedBooks = data.docs.map(formatSearchBook);
+       setBooks(formattedBooks);
+       } else{
+           setBooks([]);
+       }
     }
 
     return(
