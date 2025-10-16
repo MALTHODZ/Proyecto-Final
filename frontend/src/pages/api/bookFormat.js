@@ -1,6 +1,5 @@
 import {fetchBookDetails} from "@/pages/api/apiFetch";
-
-const PLACEHOLDER_COVER = 'https://via.placeholder.com/180x270?text=Sin+portada';
+import {imageCover} from "@/pages/utils/imageCover";
 
 const getWorkId = (workKey) => {
     return workKey ? workKey.replace('/works/', '') : null;
@@ -10,7 +9,7 @@ const getCoverUrl = async (work) => {
     const workId = getWorkId(work.key);
 
     if (!workId) {
-        return PLACEHOLDER_COVER;
+        return imageCover;
     }
 
     try {
@@ -24,7 +23,7 @@ const getCoverUrl = async (work) => {
         console.error(`Error obteniendo detalles para ${workId}:`, err);
     }
 
-    return PLACEHOLDER_COVER;
+    return imageCover;
 };
 
 export const formatBook = async (work) => {

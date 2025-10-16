@@ -1,10 +1,10 @@
-const PLACEHOLDER_COVER = 'https://via.placeholder.com/180x270?text=Sin+portada';
+import { imageCover } from "@/pages/utils/imageCover";
 
 const getCoverUrlFromSearch = (book) => {
     if (book.cover_i) {
         return `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
     }
-    return PLACEHOLDER_COVER;
+    return imageCover;
 };
 
 export const formatSearchBook = (book) => {
