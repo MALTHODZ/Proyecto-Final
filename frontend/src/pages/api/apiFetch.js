@@ -19,3 +19,22 @@ export const fetchBookDetails = async (workKey) => {
 
     return null;
 };
+
+export const fetchSearchBooks = async (query, limit) => {
+    try {
+        const response = await fetch(
+            `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=${limit}`
+        );
+
+        if (!response.ok) {
+            throw new Error(`Error ${response.status}: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        return data;
+
+    } catch (error) {
+        console.error('Error buscando libros:', error);
+        throw error;
+    }
+};
