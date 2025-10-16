@@ -1,4 +1,5 @@
 import TrendingBooks from "@/pages/components/TrendingBooks";
+import BookSearch from "@/pages/components/BookSearch";
 
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
           <header>
               <span>Icono</span>
               <p>Babunger Books</p>
-              <input/>
+              <BookSearch/>
               <button>Registrarse</button>
               <button>Iniciar sesion</button>
           </header>
