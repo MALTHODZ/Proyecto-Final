@@ -48,3 +48,23 @@ export const fetchFantasyBooks = async (limit) => {
 
     return response.json();
 };
+
+export const fetchFictionBooks = async (limit) => {
+    const response = await fetch(`https://openlibrary.org/subjects/science_fiction.json?limit=${limit}`);
+
+    if (!response.ok) {
+        throw new Error(`Error ${response.status}: ${response.statusText}`);
+    }
+
+    return response.json();
+};
+
+export const fetchThrillerBooks = async (limit) => {
+    const response = await fetch(`https://openlibrary.org/subjects/thriller.json?limit=${limit}`);
+
+    if (!response.ok) {
+        throw new Error(`Error ${response.status}: ${response.statusText}`);
+    }
+
+    return response.json();
+};
