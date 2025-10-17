@@ -13,17 +13,17 @@ export const fetchTrendingData = async (period, limit) => {
 export const fetchBookDetails = async (workKey) => {
     const response = await fetch(`https://openlibrary.org${workKey}.json`);
 
-    if (response.ok) {
-        return response.json();
+    if (!response.ok) {
+        throw new Error(`Error ${response.status}: ${response.statusText}`);
     }
-
-    return null;
+    return response.json();
 };
 
-export const fetchSearchBooks = async (query, limit) => {
+
+export const fetchSearchBooks = async (query, limit = 10) => {
     try {
         const response = await fetch(
-            `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=10`
+            `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=${limit}`
         );
 
         if (!response.ok) {
@@ -37,4 +37,14 @@ export const fetchSearchBooks = async (query, limit) => {
         console.error('Error buscando libros:', error);
         throw error;
     }
+};
+
+export const fetchFantasyBooks = async (limit=10) => {
+    const response = await fetch(`https://openlibrary.org/subjects/fantasy.json?limit=${limit}`);
+
+    if (!response.ok) {
+        throw new Error(`Error ${response.status}: ${response.statusText}`);
+    }
+
+    return response.json();
 };
