@@ -23,7 +23,7 @@ export const fetchBookDetails = async (workKey) => {
 export const fetchSearchBooks = async (query, limit) => {
     try {
         const response = await fetch(
-            `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=${limit}`
+            `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=10`
         );
 
         if (!response.ok) {
