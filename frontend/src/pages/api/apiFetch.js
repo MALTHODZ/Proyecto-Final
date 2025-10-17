@@ -39,7 +39,7 @@ export const fetchSearchBooks = async (query, limit = 10) => {
     }
 };
 
-export const fetchFantasyBooks = async (limit=10) => {
+export const fetchFantasyBooks = async (limit) => {
     const response = await fetch(`https://openlibrary.org/subjects/fantasy.json?limit=${limit}`);
 
     if (!response.ok) {
