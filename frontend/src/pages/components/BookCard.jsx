@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const BookCard = ({ book }) => {
+export default function BookCard ({ book }) {
     const [imgError, setImgError] = useState(false);
 
     return (
@@ -32,5 +32,3 @@ const BookCard = ({ book }) => {
         </div>
     );
 };
-
-export default BookCard;

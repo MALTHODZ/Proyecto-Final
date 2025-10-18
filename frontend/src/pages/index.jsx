@@ -1,6 +1,5 @@
 import TrendingBooks from "@/pages/components/TrendingBooks";
 import BookSearch from "@/pages/components/BookSearch";
-import FantasyBooks from "@/pages/components/FantasyBooks";
 import Link from 'next/link';
 
 
@@ -16,8 +15,9 @@ export default function Home() {
               <button>Iniciar sesion</button>
           </header>
           <nav>
-              <div>Categorias</div>
-              <FantasyBooks/>
+              <h2>Categorias</h2>
+              <Link href="/components/FantasyBooks"> Libros de fantasia</Link>
+
           </nav>
           <main>
               <div>
