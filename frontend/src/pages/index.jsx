@@ -11,7 +11,7 @@ export default function Home() {
               <span>Icono</span>
               <p>Babunger Books</p>
               <BookSearch/>
-              <button>Registrarse</button>
+              <Link href="/components/Register">Register</Link>
               <button>Iniciar sesion</button>
           </header>
           <nav>
