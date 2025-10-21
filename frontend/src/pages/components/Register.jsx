@@ -8,10 +8,8 @@ export default function Register () {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Comprobamos validacion del formulario ...
-        // Si todo es correcto enviamos el formulario
 
-        console.log('Formulario Enviado!');
+        console.log('Formulario enviado');
     }
 
     const handleInputNombre = (e) => {
