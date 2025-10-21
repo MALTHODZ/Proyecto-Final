@@ -1,9 +1,56 @@
+import { useState } from "react";
 
-export default function (){
-    return(
-    <div>
-        <p>Aqui estara el formulario para registrarse</p>
-        <hr/>
-    </div>
-    )
+export default function Register () {
+    const [inputNombre, cambiarInputNombre] = useState('');
+    const [inputCorreo, cambiarInputCorreo] = useState('');
+
+    // Funcion que se encargara de validar los datos
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Comprobamos validacion del formulario ...
+        // Si todo es correcto enviamos el formulario
+
+        console.log('Formulario Enviado!');
+    }
+
+    const handleInputNombre = (e) => {
+        cambiarInputNombre(e.target.value);
+    }
+
+    const handleInputCorreo = (e) => {
+        cambiarInputCorreo(e.target.value);
+    }
+
+    return (
+        <>
+            <form action="" onSubmit={handleSubmit} className="formulario">
+                <div>
+                    <label htmlFor="nombre">Nombre</label>
+                    <input
+                        type="text"
+                        name="nombre"
+                        placeholder="Nombre"
+                        id="nombre"
+                        value={inputNombre}
+                        onChange={handleInputNombre}
+                    />
+                </div>
+
+                <div>
+                    <label htmlFor="correo">Correo</label>
+                    <input
+                        type="text"
+                        name="correo"
+                        placeholder="Correo"
+                        id="correo"
+                        value={inputCorreo}
+                        onChange={handleInputCorreo}
+                    />
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </>
+    );
 }
