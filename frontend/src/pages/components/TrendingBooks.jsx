@@ -25,7 +25,7 @@ export default function TrendingBooks () {
                 <h2>Libros Trending</h2>
                 <p>Mostrando {books.length} libros</p>
 
-                <div className="trending-books-grid">
+                <div className="books-grid">
                     {books.map(book => (
                         <BookCard key={book.id} book={book} />
                     ))}

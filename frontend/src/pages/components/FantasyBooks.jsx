@@ -25,7 +25,7 @@ export default function FantasyBooks(){
             <h1>Aqui se veran los libros de fantasia</h1>
             <div>
                 <p>Montrando {books.length} libros</p>
-                <div className="trending-books-grid">
+                <div className="books-grid">
                     {books.map(book => (
                         <BookCard key={book.id} book={book} />
                     ))}

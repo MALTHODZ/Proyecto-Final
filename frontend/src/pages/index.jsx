@@ -17,6 +17,8 @@ export default function Home() {
           <nav>
               <h2>Categorias</h2>
               <Link href="/components/FantasyBooks"> Libros de fantasia</Link>
+              <hr/>
+              <Link href="/components/FictionBooks"> Libros de ficcion</Link>
 
           </nav>
           <main>
