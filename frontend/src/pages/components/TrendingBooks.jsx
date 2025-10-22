@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { getTrendingBooks } from '../api/openLibrary';
+import { useState, useEffect } from 'react';
+import { getTrendingBooks } from '../api/getTrendingBooks';
+import BookCard from "@/pages/components/BookCard";
 
-const TrendingBooks = () => {
+export default function TrendingBooks () {
     const [books, setBooks] = useState([]);
 
     const fetchBooks = async () => {
@@ -20,35 +21,16 @@ const TrendingBooks = () => {
 
     return (
         <div>
-            <h1>Prueba de Trending Books API</h1>
-
-            <button onClick={fetchBooks}>
-                Actualizar por si no cargan y ver el error por consola
-            </button>
-
             <div>
-                <h1>Libros Trending</h1>
+                <h2>Libros Trending</h2>
                 <p>Mostrando {books.length} libros</p>
 
-                <div>
+                <div className="books-grid">
                     {books.map(book => (
-                        <div key={book.id}>
-
-                            <h2>
-                                {book.title}
-                            </h2>
-
-                            {book.firstPublishYear && (
-                                <p>
-                                    Año: {book.firstPublishYear}
-                                </p>
-                            )}
-                        </div>
+                        <BookCard key={book.id} book={book} />
                     ))}
                 </div>
             </div>
         </div>
     );
 };
-
-export default TrendingBooks;
