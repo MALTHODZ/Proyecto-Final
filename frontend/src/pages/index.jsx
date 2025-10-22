@@ -16,10 +16,11 @@ export default function Home() {
           </header>
           <nav>
               <h2>Categorias</h2>
-              <Link href="/components/FantasyBooks"> Libros de fantasia</Link>
+              <Link href="/components/FantasyBooks"> Libros de Fantasia</Link>
               <hr/>
-              <Link href="/components/FictionBooks"> Libros de ficcion</Link>
-
+              <Link href="/components/FictionBooks"> Libros de Ficcion</Link>
+              <hr/>
+              <Link href="/components/ThrillerBooks"> Libros de Thriller</Link>
           </nav>
           <main>
               <div>
