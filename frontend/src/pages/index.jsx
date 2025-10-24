@@ -1,5 +1,5 @@
-import TrendingBooks from "@/pages/components/TrendingBooks";
-import BookSearch from "@/pages/components/BookSearch";
+import TrendingBooks from "@/pages/components/homePage/TrendingBooks";
+import BookSearch from "@/pages/components/searchResult/BookSearch";
 import Link from 'next/link';
 
 
@@ -11,16 +11,16 @@ export default function Home() {
               <span>Icono</span>
               <p>Babunger Books</p>
               <BookSearch/>
-              <Link href="/components/Register">Register</Link>
+              <Link href="/components/userAuthentication/register/Register">Register</Link>
               <button>Iniciar sesion</button>
           </header>
           <nav>
               <h2>Categorias</h2>
-              <Link href="/components/FantasyBooks"> Libros de Fantasia</Link>
+              <Link href="/components/navBar/FantasyBooks"> Libros de Fantasia</Link>
               <hr/>
-              <Link href="/components/FictionBooks"> Libros de Ficcion</Link>
+              <Link href="/components/navBar/FictionBooks"> Libros de Ficcion</Link>
               <hr/>
-              <Link href="/components/ThrillerBooks"> Libros de Thriller</Link>
+              <Link href="/components/navBar/ThrillerBooks"> Libros de Thriller</Link>
           </nav>
           <main>
               <div>
