@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {fetchSearchBooks} from "@/pages/api/apiFetch";
-import {formatSearchBook} from "@/pages/api/bookSearchFormat";
+import {formatSearchBook} from "@/pages/api/searchResult/bookSearchFormat";
 
 
 export default function BookSearch() {

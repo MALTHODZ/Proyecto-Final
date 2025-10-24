@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import {getFantasyBooks} from "@/pages/api/getFantasyBooks";
+import {getFantasyBooks} from "@/pages/api/navBar/getFantasyBooks";
 import BookCard from "@/pages/components/BookCard";
 
 export default function FantasyBooks(){

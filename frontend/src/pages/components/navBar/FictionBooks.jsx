@@ -1,19 +1,19 @@
 import {useEffect, useState} from "react";
-import {getThrillerBooks} from "@/pages/api/getThrillerBooks";
+import {getFictionBooks} from "@/pages/api/navBar/getFictionBooks";
 import BookCard from "@/pages/components/BookCard";
 
 
-export default function ThrillerBooks() {
+export default function FictionBooks() {
 
     const [books, setBooks] = useState([]);
 
     const fetchBooks = async () => {
         try{
-            const result = await getThrillerBooks();
+            const result = await getFictionBooks();
             setBooks(result.books);
-            console.log('datos recibidos',result);
+            console.log('datos de ficcion recibidos', result)
         } catch (error) {
-            console.log('error con el componente thrillerbooks',error);
+            console.log('Error con el componente',error)
         }
     }
 
@@ -23,9 +23,9 @@ export default function ThrillerBooks() {
 
     return (
         <>
-            <h1>Aqui se veran los libros Thriller</h1>
+        <h1>Aqui se veran libros de Ficcion</h1>
             <div>
-                <p>Montrando {books.length} libros</p>
+                <p>Muestra de {books.length} libros</p>
                 <div className="books-grid">
                     {books.map(book => (
                         <BookCard key={book.id} book={book} />

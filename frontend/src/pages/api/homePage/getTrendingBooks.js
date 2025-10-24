@@ -1,5 +1,5 @@
-import { fetchTrendingData } from './apiFetch';
-import { formatBook } from './bookFormat';
+import { fetchTrendingData } from '../apiFetch';
+import { formatBook } from '../bookFormat';
 
 export const getTrendingBooks = async (period = 'monthly', limit = 10) => {
     try {

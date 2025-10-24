@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getTrendingBooks } from '../api/getTrendingBooks';
+import { getTrendingBooks } from '../../api/homePage/getTrendingBooks';
 import BookCard from "@/pages/components/BookCard";
 
 export default function TrendingBooks () {
