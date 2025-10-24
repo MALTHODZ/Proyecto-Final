@@ -15,7 +15,7 @@ export const getTrendingBooks = async (period = 'monthly', limit = 10) => {
         };
 
     } catch (error) {
-        console.error('Error obteniendo libros trending:', error);
+        console.log('Error obteniendo libros trending:', error);
         throw error;
     }
 };

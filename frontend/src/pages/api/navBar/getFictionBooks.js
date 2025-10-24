@@ -13,7 +13,7 @@ export const getFictionBooks = async (limit = 10) => {
             books: fictionBooks,
         }
     } catch(error){
-        console.error('Error al obtener los libros de ficcion',error)
+        console.log('Error al obtener los libros de ficcion',error)
         throw error;
     }
 }
