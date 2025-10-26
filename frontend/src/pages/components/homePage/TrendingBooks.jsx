@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { getTrendingBooks } from '../../api/homePage/getTrendingBooks';
 import BookCard from "@/pages/components/BookCard";
+import BookDetails from "@/pages/components/productView/BookDetails";
 
 export default function TrendingBooks () {
     const [books, setBooks] = useState([]);
+    const [selectedBook, setSelectedBook] = useState(null);
 
     const fetchBooks = async () => {
         try {
@@ -19,6 +21,15 @@ export default function TrendingBooks () {
         fetchBooks();
     }, []);
 
+    if (selectedBook) {
+        return (
+            <BookDetails
+                book={selectedBook}
+                onBack={() => setSelectedBook(null)}
+            />
+        );
+    }
+
     return (
         <div>
             <div>
@@ -27,7 +38,11 @@ export default function TrendingBooks () {
 
                 <div className="books-grid">
                     {books.map(book => (
-                        <BookCard key={book.id} book={book} />
+                        <BookCard
+                            key={book.id}
+                            book={book}
+                            viewDetails={() => setSelectedBook(book)}
+                        />
                     ))}
                 </div>
             </div>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-export default function BookCard ({ book }) {
+export default function BookCard ({ book, viewDetails }) {
     const [imgError, setImgError] = useState(false);
 
     return (
@@ -29,6 +29,10 @@ export default function BookCard ({ book }) {
                     Año: {book.firstPublishYear}
                 </p>
             )}
+
+            <button onClick={viewDetails}>
+                Ver detalles
+            </button>
         </div>
     );
 };
