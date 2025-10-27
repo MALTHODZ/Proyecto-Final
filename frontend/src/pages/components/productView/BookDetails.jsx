@@ -19,7 +19,7 @@ export default function BookDetails({ book, onBack }) {
     return (
         <div>
             <button onClick={onBack}>
-                Volver a libros trending
+                Volver
             </button>
 
             <div>

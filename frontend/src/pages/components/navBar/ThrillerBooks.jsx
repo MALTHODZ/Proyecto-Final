@@ -1,11 +1,13 @@
 import {useEffect, useState} from "react";
 import {getThrillerBooks} from "@/pages/api/navBar/getThrillerBooks";
 import BookCard from "@/pages/components/BookCard";
+import BookDetails from "@/pages/components/productView/BookDetails";
 
 
 export default function ThrillerBooks() {
 
     const [books, setBooks] = useState([]);
+    const [selectedBook, setSelectedBook] = useState(null);
 
     const fetchBooks = async () => {
         try{
@@ -21,6 +23,15 @@ export default function ThrillerBooks() {
         fetchBooks();
     },[])
 
+    if (selectedBook) {
+        return(
+            <BookDetails
+                book={selectedBook}
+                onBack={() => setSelectedBook(null)}
+            />
+        )
+    }
+
     return (
         <>
             <h1>Aqui se veran los libros Thriller</h1>
@@ -28,7 +39,10 @@ export default function ThrillerBooks() {
                 <p>Montrando {books.length} libros</p>
                 <div className="books-grid">
                     {books.map(book => (
-                        <BookCard key={book.id} book={book} />
+                        <BookCard
+                            key={book.id}
+                            book={book}
+                            viewDetails={() => setSelectedBook(book)} />
                     ))}
                 </div>
             </div>
