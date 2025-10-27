@@ -1,11 +1,13 @@
 import {useEffect, useState} from "react";
 import {getFictionBooks} from "@/pages/api/navBar/getFictionBooks";
 import BookCard from "@/pages/components/BookCard";
+import BookDetails from "@/pages/components/productView/BookDetails";
 
 
 export default function FictionBooks() {
 
     const [books, setBooks] = useState([]);
+    const [selectedBook, setSelectedBook] = useState(null);
 
     const fetchBooks = async () => {
         try{
@@ -21,6 +23,15 @@ export default function FictionBooks() {
         fetchBooks();
     },[])
 
+    if (selectedBook) {
+        return(
+            <BookDetails
+                book={selectedBook}
+                onBack={() => setSelectedBook(null)}
+            />
+        )
+    }
+
     return (
         <>
         <h1>Aqui se veran libros de Ficcion</h1>
@@ -28,7 +39,11 @@ export default function FictionBooks() {
                 <p>Muestra de {books.length} libros</p>
                 <div className="books-grid">
                     {books.map(book => (
-                        <BookCard key={book.id} book={book} />
+                        <BookCard
+                            key={book.id}
+                            book={book}
+                            viewDetails={() => setSelectedBook(book)}
+                        />
                     ))}
                 </div>
             </div>
