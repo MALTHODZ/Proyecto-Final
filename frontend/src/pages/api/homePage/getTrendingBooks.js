@@ -5,6 +5,8 @@ export const getTrendingBooks = async (period = 'monthly', limit = 10) => {
     try {
         const data = await fetchTrendingData(period, limit);
 
+        console.log(data);
+
         const booksWithCovers = await data.works.map(formatSearchBook);
 
         return {

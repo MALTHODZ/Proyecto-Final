@@ -1,20 +1,21 @@
-import { imageCover } from "@/pages/utils/imageCover";
-
 const getCoverUrlFromSearch = (book) => {
     if (book.cover_i) {
         return `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
     }
-    return imageCover;
+
+    if (book.covers?.at(0)) {
+        return `https://covers.openlibrary.org/b/id/${book.covers.at(0)}-M.jpg`;
+    }
+
+    return undefined;
 };
 
 export const formatSearchBook = (book) => {
     return {
-        id: book.key,
+        id: book.key.split('/').at(-1),
         title: book.title,
-        author: book.author_name?.[0] || 'Autor desconocido',
-        authors: book.author_name || [],
+        authors: book.author_name ?? [],
         firstPublishYear: book.first_publish_year,
         cover: getCoverUrlFromSearch(book),
-        isbn: book.isbn?.[0],
     };
 };

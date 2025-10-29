@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import {fetchBookDetailsNew} from "@/pages/api/apiFetch";
+import {formatSearchBook} from "@/pages/api/searchResult/formatSearchBook";
 
 export default function useBookDetails(book) {
     const [detailedBook, setDetailedBook] = useState(null);

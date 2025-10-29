@@ -1,14 +1,15 @@
 import {fetchThrillerBooks} from "@/pages/api/apiFetch";
-import {formatBook} from "@/pages/api/bookFormat";
+import {formatSearchBook} from "@/pages/api/searchResult/formatSearchBook";
 
 
-export const getThrillerBooks = async (limit = 8) => {
+export const getThrillerBooks = async (limit = 10) => {
     try{
         const data = await fetchThrillerBooks(limit);
 
-        const thrillerBooks = await Promise.all(
-            data.works.slice(0, limit).map(formatBook)
-        );
+        console.log(data);
+
+        const thrillerBooks = await data.works.map(formatSearchBook);
+
         return{
             books: thrillerBooks
         }
