@@ -28,6 +28,7 @@ export default function BookDetails({ book, onBack }) {
                     <BookBasicInfo
                         title={detailedBook.title}
                         year={detailedBook.firstPublishYear}
+                        author={detailedBook.authors?.at(0)}
                     />
 
                     <BookDescription description={detailedBook.description} />

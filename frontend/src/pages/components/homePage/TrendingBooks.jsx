@@ -32,19 +32,17 @@ export default function TrendingBooks () {
 
     return (
         <div>
-            <div>
-                <h2>Libros Trending</h2>
-                <p>Mostrando {books.length} libros</p>
+            <h2>Libros Trending</h2>
+            <p>Mostrando {books.length} libros</p>
 
-                <div className="books-grid">
-                    {books.map(book => (
-                        <BookCard
-                            key={book.id}
-                            book={book}
-                            viewDetails={() => setSelectedBook(book)}
-                        />
-                    ))}
-                </div>
+            <div className="books-grid">
+                {books.map(book => (
+                    <BookCard
+                        key={book.id}
+                        book={book}
+                        viewDetails={() => setSelectedBook(book)}
+                    />
+                ))}
             </div>
         </div>
     );

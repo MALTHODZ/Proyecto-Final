@@ -1,28 +1,17 @@
-import { useState } from 'react';
+import BookCover from "@/pages/components/productView/BookCover";
 
 export default function BookCard ({ book, viewDetails }) {
-    const [imgError, setImgError] = useState(false);
-
     return (
         <div>
-            {!imgError ? (
-                <img
-                    src={book.cover}
-                    alt={book.title}
-                    onError={() => {
-                        console.log('Error al cargar la imagen:', book.title);
-                        setImgError(true);
-                    }}
-                />
-            ) : (
-                <div>
-                    <p>Sin portada</p>
-                </div>
-            )}
+            <BookCover cover={book.cover} title={book.title} />
 
             <h3>
                 {book.title}
             </h3>
+
+            <h4>
+                {book.authors?.at(0)}
+            </h4>
 
             {book.firstPublishYear && (
                 <p>

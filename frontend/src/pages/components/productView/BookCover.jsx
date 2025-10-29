@@ -1,21 +1,16 @@
-import {useState} from "react";
+import { imageCover } from "@/pages/utils/imageCover";
 
 export default function BookCover({ cover, title }) {
-    const [imgError, setImgError] = useState(false);
-
-    if (cover && !imgError) {
+    if (cover) {
         return (
             <img
                 src={cover}
                 alt={title}
-                onError={() => setImgError(true)}
             />
         );
     }
 
     return (
-        <div>
-            <p>Sin portada</p>
-        </div>
+        <img src={imageCover} alt={title} />
     );
 }
