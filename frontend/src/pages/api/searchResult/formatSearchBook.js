@@ -7,6 +7,10 @@ const getCoverUrlFromSearch = (book) => {
         return `https://covers.openlibrary.org/b/id/${book.covers.at(0)}-M.jpg`;
     }
 
+    if (book.cover_id) {
+        return `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`;
+    }
+
     return undefined;
 };
 
