@@ -25,15 +25,17 @@ export default function BookSearch() {
 
     return(
         <div>
-            <input
+            <div className="search">
+            <input className="search-input"
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Buscar libros..."
             />
-            <button onClick={handleSearch}>
+            <button className="search-button" onClick={handleSearch}>
                 Buscar
             </button>
+            </div>
             <div className="books-grid">
                 {books.map((book) => (
                     <div key={book.id}>

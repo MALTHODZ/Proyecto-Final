@@ -2,24 +2,24 @@ import BookCover from "@/pages/components/productView/BookCover";
 
 export default function BookCard ({ book, viewDetails }) {
     return (
-        <div>
+        <div className="film-decoration">
             <BookCover cover={book.cover} title={book.title} />
 
-            <h3>
+            <h3 className="film-tilt-text">
                 {book.title}
             </h3>
 
-            <h4>
+            <h4 className="film-author-text">
                 {book.authors?.at(0)}
             </h4>
 
             {book.firstPublishYear && (
-                <p>
+                <p className="film-year">
                     Año: {book.firstPublishYear}
                 </p>
             )}
 
-            <button onClick={viewDetails}>
+            <button className="film-button" onClick={viewDetails}>
                 Ver detalles
             </button>
         </div>

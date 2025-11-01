@@ -32,8 +32,7 @@ export default function TrendingBooks () {
 
     return (
         <div>
-            <h2>Libros Trending</h2>
-            <p>Mostrando {books.length} libros</p>
+            <h2 className="text-trending">Libros Trending del mes</h2>
 
             <div className="books-grid">
                 {books.map(book => (
