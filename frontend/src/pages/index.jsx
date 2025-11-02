@@ -29,9 +29,7 @@ export default function Home() {
           </header>
           <nav className="navbar">
               <Link className="navbar-text" href="/components/navBar/FantasyBooks"> Libros de Fantasia</Link>
-              <hr/>
               <Link className="navbar-text" href="/components/navBar/FictionBooks"> Libros de Ficcion</Link>
-              <hr/>
               <Link className="navbar-text" href="/components/navBar/ThrillerBooks"> Libros de Thriller</Link>
           </nav>
           <main>

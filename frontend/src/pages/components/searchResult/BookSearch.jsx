@@ -2,7 +2,6 @@ import {useState} from "react";
 import {fetchSearchBooks} from "@/pages/api/apiFetch";
 import {formatSearchBook} from "@/pages/api/searchResult/formatSearchBook";
 
-
 export default function BookSearch() {
 
     const [search, setSearch] = useState('');
