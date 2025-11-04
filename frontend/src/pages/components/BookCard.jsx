@@ -1,4 +1,4 @@
-import BookCover from "@/pages/components/productView/BookCover";
+import BookCover from "@/pages/components/productView/bookDetailsComponents/BookCover";
 
 export default function BookCard ({ book, viewDetails }) {
     return (

@@ -1,7 +1,7 @@
-import BookDescription from "@/pages/components/productView/BookDescription";
-import BookBasicInfo from "@/pages/components/productView/BookBasicInfo";
-import PurchaseInfo from "@/pages/components/productView/PurchaseInfo";
-import BookCover from "@/pages/components/productView/BookCover";
+import BookDescription from "@/pages/components/productView/bookDetailsComponents/BookDescription";
+import BookBasicInfo from "@/pages/components/productView/bookDetailsComponents/BookBasicInfo";
+import PurchaseInfo from "@/pages/components/productView/bookDetailsComponents/PurchaseInfo";
+import BookCover from "@/pages/components/productView/bookDetailsComponents/BookCover";
 import useBookDetails from "@/pages/hooks/useBookDetails";
 
 export default function BookDetails({ book, onBack }) {
