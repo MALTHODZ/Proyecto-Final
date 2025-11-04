@@ -10,7 +10,8 @@ export default function Register () {
     <div className="form-page">
         <div className="form-book">
         <div className="form-icon">
-            Icono
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=book_ribbon" />
+            <span className="material-symbols-outlined">book_ribbon</span>
         </div>
         <div>
             <h1 className="form-title">Babunger Books</h1>

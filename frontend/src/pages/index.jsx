@@ -7,20 +7,23 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <div>
+        <head>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=book_ribbon" />
+        </head>
+      <body>
           <header className="header-container">
 
                   <div className="logo">
-                      <span className="logo-icon">Icono UI</span>
+                      <span className="material-symbols-outlined">book_ribbon</span>
                       <span className="logo-text">Babunger Books</span>
                   </div>
 
-                  <div className="search">
-                      <BookSearch />
-                  </div>
+              <div className="search">
+                  <BookSearch/>
+              </div>
 
-                  <div className="auth-buttons">
-                      <Link href="/components/userAuthentication/register/Register" className="btn btn-primary">
+              <div className="auth-buttons">
+              <Link href="/components/userAuthentication/register/Register" className="btn btn-primary">
                           Registrarse
                       </Link>
                       <button className="btn btn-secondary">
@@ -43,7 +46,7 @@ export default function Home() {
               <div>Contenido elaborado con fines educativos y de aprendizaje.</div>
               <div>Fecha de creacion:2025</div>
           </footer>
-      </div>
+      </body>
     </>
   );
 }
