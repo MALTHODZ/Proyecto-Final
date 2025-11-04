@@ -1,12 +1,24 @@
 import {useState} from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
+
 export default function Register () {
 
     const [sendForm, setSendForm] = useState(false)
 
     return(
-    <div>
+    <div className="form-page">
+        <div className="form-book">
+        <div className="form-icon">
+            Icono
+        </div>
+        <div>
+            <h1 className="form-title">Babunger Books</h1>
+        </div>
+        <div>
+            <h2 className="form-subtitle">Registrate en nuestra web</h2>
+        </div>
+        </div>
         <Formik
             initialValues={{
                 nombre:'',
@@ -51,7 +63,7 @@ export default function Register () {
             }}
         >
             {({errors}) => (
-                <Form>
+                <Form className="form-card">
                     <div>
                         <label htmlFor="nombre">Nombre</label>
                         <Field
@@ -59,6 +71,7 @@ export default function Register () {
                             id="nombre"
                             name="nombre"
                             placeholder="Nombre de usuario"
+                            className="form-input"
                         />
                         <ErrorMessage name="nombre" component={() => (
                             <div className="error">{errors.nombre}</div>
@@ -71,6 +84,7 @@ export default function Register () {
                             id="correo"
                             name="correo"
                             placeholder="nombre@correo.com"
+                            className="form-input"
                         />
                         <ErrorMessage name="correo" component={() => (
                             <div className="error">{errors.correo}</div>
@@ -83,6 +97,7 @@ export default function Register () {
                             id="password1"
                             name="password1"
                             placeholder="crea una contraseña"
+                            className="form-input"
                         />
                         <ErrorMessage name="password1" component={() => (
                             <div className="error">{errors.password1}</div>
@@ -95,12 +110,13 @@ export default function Register () {
                             id="password2"
                             name="password2"
                             placeholder="pon la misma contraseña"
+                            className="form-input"
                         />
                         <ErrorMessage name="password2" component={() => (
                             <div className="error">{errors.password2}</div>
                         )}/>
                     </div>
-                    <button type="submit">Register</button>
+                    <button className="form-button" type="submit">Register</button>
                     {sendForm && <p>Te has registrado con exito!</p>}
                 </Form>
             )}

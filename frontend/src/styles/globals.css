@@ -29,6 +29,8 @@
 
 .error{
     color: red;
+    font-size: 14px;
+    margin-top: 4px;
 }
 
 /* Header */
@@ -129,12 +131,12 @@
 /* Film */
 
 .book-decoration{
-    border: solid 1px #2196F3;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     gap: 4px;
+    box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.58);
 }
 
 .book-tilt-text{
@@ -170,4 +172,68 @@
     flex-direction: column;
     gap: 10px;
     padding: 10px;
+}
+
+/* Register y login */
+
+.form-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.form-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 4rem 3rem;
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.58);
+}
+.form-card label {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-book{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.form-title{
+    color:#1976D2;
+    display: flex;
+    justify-content: center;
+}
+
+.form-subtitle{
+    display: flex;
+    justify-content: center;
+}
+
+.form-icon{
+    display: flex;
+    justify-content: center;
+}
+
+.form-input{
+    font-size: 18px;
+    text-transform: lowercase;
+}
+
+.form-button {
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #2196F3;
+    color: #FFFFFF;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    border: none;
 }
