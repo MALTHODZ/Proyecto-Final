@@ -15,11 +15,13 @@ const getCoverUrlFromSearch = (book) => {
 };
 
 export const formatSearchBook = (book) => {
+    console.log(book);
     return {
         id: book.key.split('/').at(-1),
         title: book.title,
         authors: book.author_name ?? [],
         firstPublishYear: book.first_publish_year,
         cover: getCoverUrlFromSearch(book),
+        description: book.description?.value,
     };
 };

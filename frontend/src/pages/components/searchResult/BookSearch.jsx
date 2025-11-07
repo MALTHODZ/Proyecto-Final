@@ -28,10 +28,12 @@ export default function BookSearch() {
             <input className="search-input"
                 type="text"
                 value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => {
+                    setSearch(e.target.value);
+                }}
                 placeholder="Buscar libros..."
             />
-            <button className="search-button" onClick={handleSearch}>
+            <button className="search2-button" onClick={handleSearch}>
                 Buscar
             </button>
             </div>

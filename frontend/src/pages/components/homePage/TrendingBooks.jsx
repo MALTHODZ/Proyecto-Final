@@ -6,6 +6,7 @@ import BookDetails from "@/pages/components/productView/BookDetails";
 export default function TrendingBooks () {
     const [books, setBooks] = useState([]);
     const [selectedBook, setSelectedBook] = useState(null);
+    const [search, setSearch] = useState("");
 
     const fetchBooks = async () => {
         try {

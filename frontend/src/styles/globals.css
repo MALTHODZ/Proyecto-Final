@@ -4,7 +4,6 @@
     text-decoration: none;
     list-style: none;
     color: inherit;
-    font-family: "Work Sans",  "Roboto Light", "Noto Sans", "sans-serif";
 }
 
 .error{
@@ -13,3 +12,6 @@
     margin-top: 4px;
 }
 
+html, body {
+    font-family: "Work Sans",  "Roboto Light", "Noto Sans", "sans-serif";
+}

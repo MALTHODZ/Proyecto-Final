@@ -22,18 +22,22 @@ export default function BookDetails({ book, onBack }) {
                 Volver
             </button>
 
-            <div>
+            <div className="book-container">
+                <div className="book-details">
                     <BookCover cover={detailedBook.cover} title={detailedBook.title} />
+
 
                     <BookBasicInfo
                         title={detailedBook.title}
                         year={detailedBook.firstPublishYear}
                         author={detailedBook.authors?.at(0)}
                     />
-
+                </div>
+                <div className="book-info">
                     <BookDescription description={detailedBook.description} />
 
                     <PurchaseInfo/>
+                    </div>
 
             </div>
         </div>

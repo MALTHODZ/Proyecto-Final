@@ -1,14 +1,14 @@
 export default function BookBasicInfo({ title, year, author }) {
     return (
         <div>
-            <h1>{title}</h1>
+            <h1 className="book-tilt-text">{title}</h1>
 
             {year && (
-                <p>Año: {year}</p>
+                <p className="book-year">Año: {year}</p>
             )}
 
             {author && (
-                <p>Autor: {author}</p>
+                <p className="book-author-text">Autor: {author}</p>
             )}
         </div>
     );
