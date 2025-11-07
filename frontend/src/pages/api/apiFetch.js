@@ -10,15 +10,15 @@ export const fetchTrendingData = async (period, limit) => {
     return response.json();
 };
 
-export const fetchBookDetails = async (workKey) => {
-    const response = await fetch(`https://openlibrary.org${workKey}.json`);
+export const fetchBookDetailsNew = async (bookId) => {
+    const response = await fetch(`https://openlibrary.org/works/${bookId}.json`);
 
     if (!response.ok) {
         throw new Error(`Error ${response.status}: ${response.statusText}`);
     }
+
     return response.json();
 };
-
 
 export const fetchSearchBooks = async (query, limit = 10) => {
     try {

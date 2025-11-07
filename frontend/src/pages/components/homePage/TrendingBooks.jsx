@@ -6,6 +6,7 @@ import BookDetails from "@/pages/components/productView/BookDetails";
 export default function TrendingBooks () {
     const [books, setBooks] = useState([]);
     const [selectedBook, setSelectedBook] = useState(null);
+    const [search, setSearch] = useState("");
 
     const fetchBooks = async () => {
         try {
@@ -32,19 +33,16 @@ export default function TrendingBooks () {
 
     return (
         <div>
-            <div>
-                <h2>Libros Trending</h2>
-                <p>Mostrando {books.length} libros</p>
+            <h2 className="text-trending">Libros Trending del mes</h2>
 
-                <div className="books-grid">
-                    {books.map(book => (
-                        <BookCard
-                            key={book.id}
-                            book={book}
-                            viewDetails={() => setSelectedBook(book)}
-                        />
-                    ))}
-                </div>
+            <div className="books-grid">
+                {books.map(book => (
+                    <BookCard
+                        key={book.id}
+                        book={book}
+                        viewDetails={() => setSelectedBook(book)}
+                    />
+                ))}
             </div>
         </div>
     );

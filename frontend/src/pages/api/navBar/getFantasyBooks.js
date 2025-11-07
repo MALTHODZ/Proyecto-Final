@@ -1,13 +1,12 @@
 import { fetchFantasyBooks} from "@/pages/api/apiFetch";
-import { formatBook } from "@/pages/api/bookFormat";
+import {formatSearchBook} from "@/pages/api/searchResult/formatSearchBook";
 
 export const getFantasyBooks = async (limit=10) => {
     try {
         const data = await fetchFantasyBooks(limit);
 
-        const fantasyBooks = await Promise.all(
-            data.works.slice(0, limit).map(formatBook)
-        );
+        const fantasyBooks = await data.works.map(formatSearchBook);
+
         return {
             books: fantasyBooks
         };

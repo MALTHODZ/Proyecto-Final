@@ -1,7 +1,6 @@
 import {useState} from "react";
 import {fetchSearchBooks} from "@/pages/api/apiFetch";
-import {formatSearchBook} from "@/pages/api/searchResult/bookSearchFormat";
-
+import {formatSearchBook} from "@/pages/api/searchResult/formatSearchBook";
 
 export default function BookSearch() {
 
@@ -16,8 +15,8 @@ export default function BookSearch() {
         });
 
        if (data){
-       const formattedBooks = data.docs.map(formatSearchBook);
-       setBooks(formattedBooks);
+           const formattedBooks = data.docs.map(formatSearchBook);
+           setBooks(formattedBooks);
        } else{
            setBooks([]);
        }
@@ -25,16 +24,20 @@ export default function BookSearch() {
 
     return(
         <div>
-            <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Buscar libros..."
+            <div className="search">
+            <input className="search-input"
+                type="text"
+                value={search}
+                onChange={(e) => {
+                    setSearch(e.target.value);
+                }}
+                placeholder="Buscar libros..."
             />
-            <button onClick={handleSearch}>
+            <button className="search2-button" onClick={handleSearch}>
                 Buscar
             </button>
-            <div>
+            </div>
+            <div className="books-grid">
                 {books.map((book) => (
                     <div key={book.id}>
                         <img src={book.cover} alt={book.title} />

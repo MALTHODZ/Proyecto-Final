@@ -1,11 +1,17 @@
-
-.books-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
 }
 
 .error{
     color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+html, body {
+    font-family: "Work Sans",  "Roboto Light", "Noto Sans", "sans-serif";
 }

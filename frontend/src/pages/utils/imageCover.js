@@ -1,3 +1,1 @@
-export const imageCover = {
-    placeholder_cover: 'https://via.placeholder.com/180x270?text=Sin+portada'
-};
+export const imageCover = 'https://placehold.co/180x270';

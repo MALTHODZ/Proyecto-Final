@@ -1,7 +1,7 @@
-import BookDescription from "@/pages/components/productView/BookDescription";
-import BookBasicInfo from "@/pages/components/productView/BookBasicInfo";
-import PurchaseInfo from "@/pages/components/productView/PurchaseInfo";
-import BookCover from "@/pages/components/productView/BookCover";
+import BookDescription from "@/pages/components/productView/bookDetailsComponents/BookDescription";
+import BookBasicInfo from "@/pages/components/productView/bookDetailsComponents/BookBasicInfo";
+import PurchaseInfo from "@/pages/components/productView/bookDetailsComponents/PurchaseInfo";
+import BookCover from "@/pages/components/productView/bookDetailsComponents/BookCover";
 import useBookDetails from "@/pages/hooks/useBookDetails";
 
 export default function BookDetails({ book, onBack }) {
@@ -22,17 +22,22 @@ export default function BookDetails({ book, onBack }) {
                 Volver
             </button>
 
-            <div>
+            <div className="book-container">
+                <div className="book-details">
                     <BookCover cover={detailedBook.cover} title={detailedBook.title} />
+
 
                     <BookBasicInfo
                         title={detailedBook.title}
                         year={detailedBook.firstPublishYear}
+                        author={detailedBook.authors?.at(0)}
                     />
-
+                </div>
+                <div className="book-info">
                     <BookDescription description={detailedBook.description} />
 
                     <PurchaseInfo/>
+                    </div>
 
             </div>
         </div>
