@@ -1,7 +1,5 @@
 import {useState} from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import BookSearch from "@/pages/components/searchResult/BookSearch";
-
 
 export default function Register () {
 
@@ -15,8 +13,6 @@ export default function Register () {
         </div>
         <div>
             <h1 className="form-title">Babunger Books</h1>
-
-            <BookSearch />
         </div>
         <div>
             <h2 className="form-subtitle">Registrate en nuestra web</h2>
