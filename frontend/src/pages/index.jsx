@@ -1,5 +1,4 @@
 import TrendingBooks from "@/pages/components/homePage/TrendingBooks";
-import BookSearch from "@/pages/components/searchResult/BookSearch";
 import Link from 'next/link';
 
 
@@ -15,9 +14,7 @@ export default function Home() {
                       <span className="logo-text">Babunger Books</span>
                   </div>
 
-              <div className="search">
-                  <BookSearch/>
-              </div>
+              <Link href="/components/searchResult/ButtonSearch" className="btn btn-primary" > Haz click para buscar un libro </Link>
 
               <div className="auth-buttons">
               <Link href="/components/userAuthentication/register/Register" className="btn btn-primary">
