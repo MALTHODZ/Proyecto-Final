@@ -17,8 +17,8 @@ export default function BookDetails({ book, onBack }) {
     }
 
     return (
-        <div>
-            <button onClick={onBack}>
+        <div className="main-container">
+            <button className="button-back" onClick={onBack}>
                 Volver
             </button>
 
