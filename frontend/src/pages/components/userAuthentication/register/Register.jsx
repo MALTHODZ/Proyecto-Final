@@ -1,9 +1,42 @@
 import {useState} from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import {useRouter} from "next/router";
 
 export default function Register () {
 
-    const [sendForm, setSendForm] = useState(false)
+    const router = useRouter();
+
+    const [sendForm, setSendForm] = useState(false);
+
+    const handleSubmit = async (formData) => {
+        try{
+            const response = await fetch(`/api/register`,{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.nombre,
+                    email: formData.correo,
+                    password: formData.password1,
+                })
+            })
+
+            if(response.status === 201){
+                setSendForm(true);
+
+                setTimeout(() => {
+                    router.push('/');
+                }, 2000);
+
+            } else {
+                const data = await response.json();
+                alert(data.message || 'Error al registrar usuario');
+            }
+        }catch(e){
+            console.error(e.message);
+        }
+    }
 
     return(
     <div className="form-page">
@@ -54,13 +87,8 @@ export default function Register () {
                 }
                 return error;
             }}
-            //Envia el formulario donde yo quiera y resetea el formulario
-            onSubmit={(values, { resetForm })=>{
-                resetForm();
-                console.log("enviado")
-                setSendForm(true)
-                setTimeout(() => setSendForm(false),3000)
-            }}
+
+            onSubmit={handleSubmit}
         >
             {({errors}) => (
                 <Form className="form-card">

@@ -15,7 +15,6 @@ const getCoverUrlFromSearch = (book) => {
 };
 
 export const formatSearchBook = (book) => {
-    console.log(book);
     return {
         id: book.key.split('/').at(-1),
         title: book.title,
