@@ -23,9 +23,9 @@ export default function Home() {
               <Link href="/components/userAuthentication/register/Register" className="btn btn-primary">
                           Registrarse
                       </Link>
-                      <button className="btn btn-secondary">
-                          Iniciar Sesion
-                      </button>
+                  <Link href="/components/userAuthentication/login/Login" className="btn btn-secondary">
+                      Iniciar Sesion
+                  </Link>
                   </div>
           </header>
           <nav className="navbar">
