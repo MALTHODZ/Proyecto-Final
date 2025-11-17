@@ -34,9 +34,8 @@ export default function ThrillerBooks() {
 
     return (
         <>
-            <h1>Aqui se veran los libros Thriller</h1>
             <div>
-                <p>Montrando {books.length} libros</p>
+                <h2 className="text-title-category">Libros de Thiller</h2>
                 <div className="books-grid">
                     {books.map(book => (
                         <BookCard

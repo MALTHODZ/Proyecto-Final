@@ -1,4 +1,5 @@
 import TrendingBooks from "@/pages/components/homePage/TrendingBooks";
+import Head from 'next/head';
 import Link from 'next/link';
 
 
@@ -6,10 +7,10 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-        <head>
+        <Head>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        </head>
-      <body>
+        </Head>
+
           <header className="header-container">
 
                   <div className="logo">
@@ -39,11 +40,10 @@ export default function Home() {
               </div>
           </main>
           <footer className="footer-container">
-              <div>Sitio web con fines educativos</div>
-              <div>Contenido elaborado con fines educativos y de aprendizaje.</div>
-              <div>Fecha de creacion:2025</div>
+              <div>Sitio web con fines educativos creado por Xavier Santiago</div>
+              <div>Contenido elaborado con fines educativos y de aprendizaje</div>
+              <div>Fecha de creacion año 2025</div>
           </footer>
-      </body>
     </>
   );
 }

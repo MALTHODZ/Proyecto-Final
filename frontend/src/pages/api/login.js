@@ -18,15 +18,12 @@ export default async function login(req, res) {
 
     try {
         const userExist = await User.findOne({
-            email
+            email,
+            password
         });
 
         if (!userExist) {
-            return res.status(401).json({ message: 'Email o contraseña incorrectos' });
-        }
-
-        if (password !== user.password) {
-            return res.status(401).json({ message: 'Email o contraseña incorrectos' });
+            return res.status(404).json({ message: 'Email o contraseña incorrectos' });
         }
 
         return res.status(200).json({
