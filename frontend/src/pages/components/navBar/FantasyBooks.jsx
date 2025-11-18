@@ -33,9 +33,8 @@ export default function FantasyBooks(){
 
     return(
         <div>
-            <h1>Aqui se veran los libros de fantasia</h1>
             <div>
-                <p>Montrando {books.length} libros</p>
+                <h2 className="text-title-category">Libros de Fantasia</h2>
                 <div className="books-grid">
                     {books.map(book => (
                         <BookCard

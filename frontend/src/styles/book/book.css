@@ -81,3 +81,13 @@
     align-items: center;
     justify-content: space-around;
 }
+
+@media (max-width: 500px){
+    .books-grid{
+        padding: 20px;
+    }
+    .book-container{
+        width: 450px;
+        height: 60vh;
+    }
+}
