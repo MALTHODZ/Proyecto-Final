@@ -3,7 +3,7 @@ import {dbConnect} from "@/lib/mongo";
 
 export default async function handler(req, res) {
     const { name, email, password } = req.body;
-
+    console.log(req.body);
     // Crear una conexion con DB
     await dbConnect();
 
