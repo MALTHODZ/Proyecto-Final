@@ -16,9 +16,9 @@ export default function Register () {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    name: formData.nombre,
-                    email: formData.correo,
-                    password: formData.password1,
+                    name: formData.name,
+                    email: formData.email,
+                    password: formData.password,
                 })
             })
 
@@ -30,11 +30,11 @@ export default function Register () {
                 }, 2000);
 
             } else {
-                const data = await response.json();
-                alert(data.message || 'Error al registrar usuario');
+                window.alert('Error al registrar usuario');
             }
         }catch(e){
             console.error(e.message);
+            window.alert('Error de conexion para registrarse');
         }
     }
 

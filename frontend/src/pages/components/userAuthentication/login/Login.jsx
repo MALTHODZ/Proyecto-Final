@@ -19,16 +19,15 @@ export default function Login(){
                 })
             })
 
-            const data = await response.json();
             if(response.status === 200){
                 console.log('Login con exito');
                 router.push('/');
             }else{
-                console.log('Error al iniciar sesion')
+                window.alert('Error al iniciar sesion')
             }
         }catch(e){
             console.error(e.message)
-            alert('Error al intentar iniciar sesión');
+            window.alert('Error de conexion para iniciar sesión');
         }
     }
 
