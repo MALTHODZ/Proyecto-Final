@@ -35,6 +35,7 @@ export default function FantasyBooks(){
     return(
         <MainLayout>
             <h2 className="text-title-category">Libros de Fantasia</h2>
+            <button onClick={() => window.history.back()} className="button-back btn-center">Volver</button>
             <div className="books-grid">
                 {books.map(book => (
                     <BookCard

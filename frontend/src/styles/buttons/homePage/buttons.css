@@ -24,13 +24,17 @@
 }
 
 .button-back{
-    margin-bottom: 20px;
     font-size: 16px;
     background-color: #2196F3;
     color: #FFFFFF;
     border: none;
     padding: 4px;
     cursor: pointer;
+}
+
+.btn-center {
+    display: flex;
+    justify-self: center;
 }
 
 @media (max-width: 500px) {
