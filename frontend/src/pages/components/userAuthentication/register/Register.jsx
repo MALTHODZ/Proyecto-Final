@@ -7,8 +7,6 @@ export default function Register () {
 
     const router = useRouter();
 
-    const [sendForm, setSendForm] = useState(false);
-
     const handleSubmit = async (formData) => {
         try{
             const response = await fetch(`/api/register`,{
@@ -23,13 +21,13 @@ export default function Register () {
                 })
             })
 
+            const json = await response.json();
+
             if(response.status === 201){
-                setSendForm(true);
-
-                setTimeout(() => {
-                    router.push('/');
-                }, 2000);
-
+                window.alert('Te has registrado con exito!');
+                router.push('/');
+            } else if (json.error_code === 1) {
+                window.alert('Ya existe un usuario con este mail');
             } else {
                 window.alert('Error al registrar usuario');
             }
@@ -141,7 +139,6 @@ export default function Register () {
                         )}/>
                     </div>
                     <button className="form-button" type="submit">Register</button>
-                    {sendForm && <p>Te has registrado con exito!</p>}
                 </Form>
             )}
         </Formik>

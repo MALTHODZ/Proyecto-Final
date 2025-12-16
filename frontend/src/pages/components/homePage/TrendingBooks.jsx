@@ -8,14 +8,18 @@ import Link from 'next/link';
 export default function TrendingBooks () {
     const [books, setBooks] = useState([]);
     const [selectedBook, setSelectedBook] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     const fetchBooks = async () => {
+        setIsLoading(true);
         try {
             const result = await getTrendingBooks();
             setBooks(result.books);
             console.log('Datos recibidos:', result);
         } catch (err) {
             console.error('Error en el componente:', err);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -44,6 +48,7 @@ export default function TrendingBooks () {
             <h2 className="text-title-category">Libros Trending del mes</h2>
 
             <div className="books-grid">
+                {isLoading ? ('Cargando libros...') : null}
                 {books.map(book => (
                     <BookCard
                         key={book.id}
