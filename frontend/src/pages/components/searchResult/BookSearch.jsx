@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {fetchSearchBooks} from "@/pages/api/apiFetch";
 import {formatSearchBook} from "@/pages/api/searchResult/formatSearchBook";
+import MainLayout from "@/pages/layouts/main-layout";
 
 export default function BookSearch() {
 
@@ -24,29 +25,31 @@ export default function BookSearch() {
 
     return(
         <div>
-            <div className="search">
-            <input className="search-input"
-                type="text"
-                value={search}
-                onChange={(e) => {
-                    setSearch(e.target.value);
-                }}
-                placeholder="Buscar libros..."
-            />
-            <button className="search2-button" onClick={handleSearch}>
-                Buscar
-            </button>
-            </div>
-            <div className="books-grid">
-                {books.map((book) => (
-                    <div key={book.id}>
-                        <img src={book.cover} alt={book.title} />
-                        <h3>{book.title}</h3>
-                        <p>{book.author}</p>
-                        <p>{book.firstPublishYear}</p>
-                    </div>
-                ))}
-            </div>
+            <MainLayout>
+                <div className="search">
+                <input className="search-input"
+                    type="text"
+                    value={search}
+                    onChange={(e) => {
+                        setSearch(e.target.value);
+                    }}
+                    placeholder="Buscar libros..."
+                />
+                <button className="search2-button" onClick={handleSearch}>
+                    Buscar
+                </button>
+                </div>
+                <div className="books-grid">
+                    {books.map((book) => (
+                        <div key={book.id}>
+                            <img src={book.cover} alt={book.title} />
+                            <h3>{book.title}</h3>
+                            <p>{book.author}</p>
+                            <p>{book.firstPublishYear}</p>
+                        </div>
+                    ))}
+                </div>
+            </MainLayout>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {getThrillerBooks} from "@/pages/api/navBar/getThrillerBooks";
 import BookCard from "@/pages/components/BookCard";
 import BookDetails from "@/pages/components/productView/BookDetails";
+import MainLayout from "@/pages/layouts/main-layout";
 
 
 export default function ThrillerBooks() {
@@ -33,18 +34,16 @@ export default function ThrillerBooks() {
     }
 
     return (
-        <>
-            <div>
-                <h2 className="text-title-category">Libros de Thiller</h2>
-                <div className="books-grid">
-                    {books.map(book => (
-                        <BookCard
-                            key={book.id}
-                            book={book}
-                            viewDetails={() => setSelectedBook(book)} />
-                    ))}
-                </div>
+        <MainLayout>
+            <h2 className="text-title-category">Libros de Thriller</h2>
+            <div className="books-grid">
+                {books.map(book => (
+                    <BookCard
+                        key={book.id}
+                        book={book}
+                        viewDetails={() => setSelectedBook(book)} />
+                ))}
             </div>
-        </>
+        </MainLayout>
     )
 }

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { getTrendingBooks } from '../../api/homePage/getTrendingBooks';
 import BookCard from "@/pages/components/BookCard";
 import BookDetails from "@/pages/components/productView/BookDetails";
+import MainLayout from "@/pages/layouts/main-layout";
+import Link from 'next/link';
 
 export default function TrendingBooks () {
     const [books, setBooks] = useState([]);
@@ -31,7 +33,14 @@ export default function TrendingBooks () {
     }
 
     return (
-        <div>
+        <MainLayout>
+            <nav className="navbar">
+                <Link className="navbar-text" href="/components/navBar/FantasyBooks"> Libros de Fantasia</Link>
+                <Link className="navbar-text" href="/components/navBar/FictionBooks"> Libros de Ficcion</Link>
+                <Link className="navbar-text" href="/components/navBar/ThrillerBooks"> Libros de Thriller</Link>
+                <Link href="/components/searchResult/ButtonSearch" className="btn btn-primary" > Buscar </Link>
+            </nav>
+
             <h2 className="text-title-category">Libros Trending del mes</h2>
 
             <div className="books-grid">
@@ -43,6 +52,6 @@ export default function TrendingBooks () {
                     />
                 ))}
             </div>
-        </div>
+        </MainLayout>
     );
 };

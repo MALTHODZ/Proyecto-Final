@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import {getFantasyBooks} from "@/pages/api/navBar/getFantasyBooks";
 import BookCard from "@/pages/components/BookCard";
 import BookDetails from "@/pages/components/productView/BookDetails";
+import MainLayout from "@/pages/layouts/main-layout";
 
 export default function FantasyBooks(){
 
@@ -32,19 +33,17 @@ export default function FantasyBooks(){
     }
 
     return(
-        <div>
-            <div>
-                <h2 className="text-title-category">Libros de Fantasia</h2>
-                <div className="books-grid">
-                    {books.map(book => (
-                        <BookCard
-                            key={book.id}
-                            book={book}
-                            viewDetails={() => setSelectedBook(book)}
-                        />
-                    ))}
-                </div>
+        <MainLayout>
+            <h2 className="text-title-category">Libros de Fantasia</h2>
+            <div className="books-grid">
+                {books.map(book => (
+                    <BookCard
+                        key={book.id}
+                        book={book}
+                        viewDetails={() => setSelectedBook(book)}
+                    />
+                ))}
             </div>
-        </div>
+        </MainLayout>
     )
 }
