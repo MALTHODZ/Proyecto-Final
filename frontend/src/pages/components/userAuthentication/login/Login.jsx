@@ -1,9 +1,10 @@
 import { Formik, Form, Field } from "formik";
 import {useRouter} from "next/router";
 import MainLayout from "@/pages/layouts/main-layout";
+import {useUser} from "@/pages/hooks/useUser";
 
 export default function Login(){
-
+    const { setUser } = useUser();
     const router = useRouter();
 
     async function handleFormSubmit(formData){
@@ -21,7 +22,8 @@ export default function Login(){
             })
 
             if(response.status === 200){
-                console.log('Login con exito');
+                const json = await response.json();
+                setUser(json.user);
                 router.push('/');
             }else{
                 window.alert('Error al iniciar sesion')

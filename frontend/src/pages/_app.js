@@ -8,7 +8,8 @@ import "@/styles/homePage/footer/footer.css"
 import "@/styles/homePage/main/trending.css"
 import "@/styles/book/book.css"
 import "@/styles/login/login.css"
+import UserProvider from "@/pages/context/UserContext";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return <UserProvider><Component {...pageProps} /></UserProvider>;
 }

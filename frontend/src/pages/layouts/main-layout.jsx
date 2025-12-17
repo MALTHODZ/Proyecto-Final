@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Head from "next/head";
+import {useUser} from "@/pages/hooks/useUser";
 
 export default function MainLayout({ children }) {
+    const { user } = useUser();
+
     return (
         <>
             <Head>
@@ -17,12 +20,16 @@ export default function MainLayout({ children }) {
                 </a>
 
                 <div className="auth-buttons">
-                    <Link href="/components/userAuthentication/register/Register" className="btn btn-primary">
-                        Registrarse
-                    </Link>
-                    <Link href="/components/userAuthentication/login/Login" className="btn btn-secondary">
-                        Iniciar Sesion
-                    </Link>
+                    {user ? (user.name) : (
+                        <>
+                            <Link href="/components/userAuthentication/register/Register" className="btn btn-primary">
+                                Registrarse
+                            </Link>
+                            <Link href="/components/userAuthentication/login/Login" className="btn btn-secondary">
+                                Iniciar Sesion
+                            </Link>
+                        </>
+                    )}
                 </div>
             </header>
 
