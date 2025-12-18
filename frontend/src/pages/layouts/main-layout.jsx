@@ -3,7 +3,7 @@ import Head from "next/head";
 import {useUser} from "@/pages/hooks/useUser";
 
 export default function MainLayout({ children }) {
-    const { user } = useUser();
+    const { user, setUser } = useUser();
 
     return (
         <>
@@ -20,7 +20,10 @@ export default function MainLayout({ children }) {
                 </a>
 
                 <div className="auth-buttons">
-                    {user ? (user.name) : (
+                    {user ? <div className="welcome-text">
+                        Bienvenido/a, {user.name}
+                        <span className="material-symbols-outlined hover-pointer" onClick={() => setUser(null)} title="Cerrar sesion">logout</span>
+                    </div> : (
                         <>
                             <Link href="/components/userAuthentication/register/Register" className="btn btn-primary">
                                 Registrarse

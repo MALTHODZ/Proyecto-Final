@@ -10,10 +10,9 @@ export default function BookDetails({ book, onBack }) {
 
     if (loading) {
         return (
-            <div>
-                <button onClick={onBack}>Volver</button>
-                <p>Cargando detalles...</p>
-            </div>
+            <MainLayout>
+                <p className="loading-details">Cargando detalles...</p>
+            </MainLayout>
         );
     }
 
