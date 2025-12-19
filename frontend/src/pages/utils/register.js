@@ -16,6 +16,6 @@ export const register = async (nombre, correo, password1) =>{
 
      return {
          status: response.status,
-         error: json.error_code,
+         error_code: json.error_code,
      }
  }

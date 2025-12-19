@@ -14,7 +14,7 @@ export default function Register () {
             if(response.status === 201){
                 window.alert('Te has registrado con exito!');
                 router.push('/');
-            } else if (response.error === 1) {
+            } else if (response.error_code === 1) {
                 window.alert('Ya existe un usuario con este mail');
             } else {
                 window.alert('Error al registrar usuario');
