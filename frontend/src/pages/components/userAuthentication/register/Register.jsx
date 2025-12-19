@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import {useRouter} from "next/router";
 import MainLayout from "@/pages/layouts/main-layout";
+import { register } from "@/pages/utils/register"
 
 export default function Register () {
 
@@ -8,24 +9,12 @@ export default function Register () {
 
     const handleSubmit = async (formData) => {
         try{
-            const response = await fetch(`/api/register`,{
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: formData.nombre,
-                    email: formData.correo,
-                    password: formData.password1,
-                })
-            })
-
-            const json = await response.json();
+            const response = await register(formData.nombre, formData.correo, formData.password1);
 
             if(response.status === 201){
                 window.alert('Te has registrado con exito!');
                 router.push('/');
-            } else if (json.error_code === 1) {
+            } else if (response.error === 1) {
                 window.alert('Ya existe un usuario con este mail');
             } else {
                 window.alert('Error al registrar usuario');
