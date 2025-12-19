@@ -2,6 +2,7 @@ import { Formik, Form, Field } from "formik";
 import {useRouter} from "next/router";
 import MainLayout from "@/pages/layouts/main-layout";
 import {useUser} from "@/pages/hooks/useUser";
+import {login} from "@/pages/utils/login";
 
 export default function Login(){
     const { setUser } = useUser();
@@ -10,20 +11,10 @@ export default function Login(){
     async function handleFormSubmit(formData){
 
         try{
-            const response = await fetch(`/api/login`,{
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: formData.email,
-                    password: formData.password,
-                })
-            })
+            const response = await login(formData.email, formData.password);
 
             if(response.status === 200){
-                const json = await response.json();
-                setUser(json.user);
+                setUser(response.data.user);
                 router.push('/');
             }else{
                 window.alert('Error al iniciar sesion')
